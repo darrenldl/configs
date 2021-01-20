@@ -104,6 +104,7 @@ exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
     # Screenshot
     bindsym $mod+Shift+P exec mkdir -p ~/screenshots && grim ~/screenshots/screenshot_"$(date '+%Y-%m-%d_%H%M%S')".png
     bindsym $mod+Alt+P exec mkdir -p ~/screenshots && grim -g "$(slurp)" ~/screenshots/screenshot_"$(date '+%Y-%m-%d_%H%M%S')".png
+    bindsym $mod+P exec grim -g "$(slurp)" - | wl-copy -t image/png
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
