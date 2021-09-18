@@ -9,4 +9,4 @@ set smarttab
 
 set clipboard=unnamedplus
 
-let mapleader=","
+let mapleader=' '
