@@ -11,9 +11,3 @@ set smarttab
 set clipboard=unnamedplus
 
 let mapleader=' '
-
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-
-vnoremap <leader>p "_dP
-
