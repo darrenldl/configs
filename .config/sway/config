@@ -103,6 +103,10 @@ exec swayidle -w \
     # Lock screen
     bindsym $mod+Escape exec swaylock -f -c 000000
 
+    # Screenshot
+    bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+    bindsym $mod+Shift+p exec grim - | wl-copy
+
 #
 # Moving around:
 #
