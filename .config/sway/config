@@ -103,6 +103,9 @@ exec swayidle -w \
     # Lock screen
     bindsym $mod+Escape exec swaylock -f -c 000000
 
+    # Lock screen and suspend
+    bindsym $mod+Shift+Escape exec swaylock -f -c 000000 && systemctl suspend
+
     # Screenshot
     bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
     bindsym $mod+Shift+p exec grim - | wl-copy
