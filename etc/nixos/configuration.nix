@@ -43,8 +43,32 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+
+  # GNOME
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gnome-console
+  ]) ++ (with pkgs.gnome; [
+    cheese
+    gnome-music
+    gnome-terminal
+    gedit # text editor
+    epiphany # web browser
+    # geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
 
   # Configure keymap in X11
   services.xserver = {
@@ -80,12 +104,19 @@
     isNormalUser = true;
     description = "darren";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    packages = (with pkgs; [
       firefox
-      kate
       keepassxc
+      ungoogled-chromium
     #  thunderbird
-    ];
+      evolution
+      kitty
+      mate.eom
+    ])
+    ++
+    (with pkgs.libsForQt5; [
+      okular
+    ]);
   };
 
   # List packages installed in system profile. To search, run:
@@ -97,6 +128,7 @@
     neovim
     blueman
     git
+    gnupg
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -110,6 +142,9 @@
   # List services that you want to enable:
 
   services.blueman.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
