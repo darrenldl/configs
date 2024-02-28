@@ -107,8 +107,7 @@
     packages = (with pkgs; [
       firefox
       keepassxc
-      ungoogled-chromium
-    #  thunderbird
+      # ungoogled-chromium
       evolution
       kitty
       mate.eom
