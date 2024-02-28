@@ -76,6 +76,8 @@
     xkbVariant = "";
   };
 
+  environment.localBinInPath = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -125,9 +127,15 @@
     curl
     tmux
     neovim
+    gnumake
     blueman
     git
     gnupg
+    podman
+    restic
+    poppler_utils
+    fzf
+    ripgrep
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -144,6 +152,10 @@
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+
+  virtualisation.podman = {
+    enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
