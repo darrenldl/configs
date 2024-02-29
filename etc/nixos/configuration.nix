@@ -127,6 +127,7 @@
     curl
     tmux
     neovim
+    btop
     gnumake
     blueman
     git
