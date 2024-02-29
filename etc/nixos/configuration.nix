@@ -60,7 +60,7 @@
     gnome-terminal
     gedit # text editor
     epiphany # web browser
-    # geary # email reader
+    geary # email reader
     evince # document viewer
     gnome-characters
     totem # video player
@@ -117,7 +117,8 @@
     ++
     (with pkgs.libsForQt5; [
       okular
-    ]);
+    ])
+    ;
   };
 
   # List packages installed in system profile. To search, run:
