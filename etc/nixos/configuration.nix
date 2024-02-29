@@ -50,6 +50,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  programs.dconf.enable = true;
+
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
@@ -123,22 +125,32 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    curl
-    tmux
-    neovim
-    btop
-    gnumake
-    blueman
-    git
-    gnupg
-    podman
-    restic
-    poppler_utils
-    fzf
-    ripgrep
-  ];
+  environment.systemPackages =
+    let gnomeRelatedPkgs = with pkgs; [
+      gnome.adwaita-icon-theme
+      gnome.adwaita-icon-theme
+      gnomeExtensions.appindicator
+      ];
+    in
+    (with pkgs; [
+      wget
+      curl
+      tmux
+      neovim
+      btop
+      gnumake
+      blueman
+      git
+      gnupg
+      podman
+      restic
+      poppler_utils
+      fzf
+      ripgrep
+    ])
+    ++
+    gnomeRelatedPkgs
+  ;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
