@@ -80,6 +80,11 @@
 
   environment.localBinInPath = true;
 
+  environment.sessionVariables = {
+    VISUAL = "nvim";
+    EDITOR = "nvim";
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
