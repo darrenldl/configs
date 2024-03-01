@@ -132,9 +132,13 @@
   # $ nix search wget
   environment.systemPackages =
     let gnomeRelatedPkgs = with pkgs; [
-      gnome.adwaita-icon-theme
-      gnome.adwaita-icon-theme
-      gnomeExtensions.appindicator
+        gnome.adwaita-icon-theme
+        gnome.adwaita-icon-theme
+        gnomeExtensions.appindicator
+      ];
+    in
+    let virtRelatedPkgs = with pkgs; [
+        swtpm
       ];
     in
     (with pkgs; [
@@ -155,6 +159,8 @@
     ])
     ++
     gnomeRelatedPkgs
+    ++
+    virtRelatedPkgs
   ;
 
   # Some programs need SUID wrappers, can be configured further or are
