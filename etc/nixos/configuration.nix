@@ -156,6 +156,7 @@
       poppler_utils
       fzf
       ripgrep
+      unzip
     ])
     ++
     gnomeRelatedPkgs
