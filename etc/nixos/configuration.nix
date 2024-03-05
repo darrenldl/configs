@@ -157,6 +157,7 @@
       fzf
       ripgrep
       unzip
+      nmap
     ])
     ++
     gnomeRelatedPkgs
