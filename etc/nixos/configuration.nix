@@ -108,6 +108,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Flatpak service
+  services.flatpak.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.darren = {
     isNormalUser = true;
@@ -126,7 +129,6 @@
         evolution
         kitty
         mate.eom
-        flatpak
       ])
       ++
       (with pkgs.libsForQt5; [
