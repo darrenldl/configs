@@ -135,6 +135,7 @@
         gnome.adwaita-icon-theme
         gnome.adwaita-icon-theme
         gnomeExtensions.appindicator
+        gnome.gnome-tweaks
       ];
     in
     let virtRelatedPkgs = with pkgs; [
