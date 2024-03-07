@@ -113,20 +113,28 @@
     isNormalUser = true;
     description = "darren";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = (with pkgs; [
-      firefox
-      keepassxc
-      # ungoogled-chromium
-      evolution
-      kitty
-      mate.eom
-    ])
-    ++
-    (with pkgs.libsForQt5; [
-      okular
-    ])
-    ;
+    packages =
+      let gnomeRelatedPkgs = with pkgs; [
+          gnome.gnome-tweaks
+          gnome.gnome-software
+        ];
+      in
+      (with pkgs; [
+        firefox
+        keepassxc
+        # ungoogled-chromium
+        evolution
+        kitty
+        mate.eom
+        flatpak
+      ])
+      ++
+      (with pkgs.libsForQt5; [
+        okular
+      ])
+      ;
   };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -135,7 +143,6 @@
         gnome.adwaita-icon-theme
         gnome.adwaita-icon-theme
         gnomeExtensions.appindicator
-        gnome.gnome-tweaks
       ];
     in
     let virtRelatedPkgs = with pkgs; [
