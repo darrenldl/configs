@@ -164,6 +164,7 @@
       podman
       restic
       poppler_utils
+      pandoc
       fzf
       ripgrep
       unzip
