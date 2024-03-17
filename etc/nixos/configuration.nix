@@ -129,6 +129,7 @@
         evolution
         kitty
         mate.eom
+        mpv
       ])
       ++
       (with pkgs.libsForQt5; [
