@@ -170,6 +170,7 @@
       ripgrep
       unzip
       nmap
+      tokei
     ])
     ++
     gnomeRelatedPkgs
