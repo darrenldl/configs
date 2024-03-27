@@ -130,6 +130,8 @@
         kitty
         mate.eom
         mpv
+        poppler_utils
+        gnumake
       ])
       ++
       (with pkgs.libsForQt5; [
@@ -158,19 +160,18 @@
       tmux
       neovim
       btop
-      gnumake
       blueman
       git
       gnupg
       podman
       restic
-      poppler_utils
       pandoc
       fzf
       ripgrep
       unzip
       nmap
       tokei
+      fastfetch
     ])
     ++
     gnomeRelatedPkgs
@@ -189,6 +190,8 @@
   # List services that you want to enable:
 
   services.blueman.enable = true;
+
+  services.fwupd.enable = true;
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
