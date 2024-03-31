@@ -134,6 +134,7 @@
         mpv
         poppler_utils
         gnumake
+        python3
       ])
       ++
       (with pkgs.libsForQt5; [
