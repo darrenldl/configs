@@ -57,7 +57,7 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-    gnome-console
+    # gnome-console
   ]) ++ (with pkgs.gnome; [
     cheese
     gnome-music
@@ -129,7 +129,6 @@
         keepassxc
         # ungoogled-chromium
         evolution
-        kitty
         mate.eom
         mpv
         poppler_utils
